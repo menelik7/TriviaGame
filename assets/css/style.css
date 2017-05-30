@@ -1,0 +1,18 @@
+body {
+
+}
+
+header {
+	text-align: center;
+}
+
+/*Main Content*/
+
+.col-md-12 {
+	text-align: center;
+}
+
+.btn-default {
+	background: #fff;
+	border: none;
+}
