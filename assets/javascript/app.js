@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+	//Declare question and answer objects.
 	var questionOptions = [
 
 		zero = {
@@ -9,12 +10,12 @@ $(document).ready(function(){
 
 		one = {
 			question: "2. How many colours are there in a rainbow?",
-			option: ["Ten", "Eight", "Seven", "None of the above", "<img src= https://dncache-mauganscorp.netdna-ssl.com/thumbseg/2158/2158865-bigthumbnail.jpg>"],
+			option: ["Ten", "Eight", "Seven", "None of the above", "<img src= http://99px.ru/sstorage/53/2015/06/tmb_133001_3007.jpg>"],
 		},
 
 		two = {
 			question: "3. Which branch of mathematics deals with the sides and angles of triangles, and their relationship to each other?",
-			option: ["Linear Algebra", "Trigonometry", "Geometry", "Triangular Algebra", "<img src= https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Circle-trig6.svg/1280px-Circle-trig6.svg.png>"],
+			option: ["Linear Algebra", "Trigonometry", "Geometry", "Triangular Algebra", "<img src= http://snagfilms-a.akamaihd.net/de/b4/e940c9f74ffa88f06d498b662339/1005-lec12-1536x865.jpg>"],
 		},
 
 		three = {
@@ -54,7 +55,7 @@ $(document).ready(function(){
 	];
 
 
-			//Set values for correct answers to be called later in functions
+			//Set values for correct answers to be called later in functions.
 			questionOptions[0].correctAns = questionOptions[0].option[1];
 			questionOptions[1].correctAns = questionOptions[1].option[2];
 			questionOptions[2].correctAns = questionOptions[2].option[1];
@@ -80,7 +81,7 @@ $(document).ready(function(){
 			$("#start").on("click", function(){
 
 
-				//Declare variables that need to be reset at the start of a new round.
+				//Declare variables that need to be reset at the start or restart of the game.
 				let correctAnsCount = 0;
 				let incorrectAnsCount = 0
 				let unAnsCount = 0;
@@ -88,7 +89,7 @@ $(document).ready(function(){
 				$("#start").hide();
 			
 
-				//Set timer functions*************************
+				//Set timer functions
 				function stop() {
 				    clearInterval(intervalId);
 				}
@@ -105,6 +106,7 @@ $(document).ready(function(){
 			        timer--;
 			        $("#timer").html("Time remaining: " + timer);
 
+			        	//If the player runs out of time
 				        if (timer === 0){
 							stop();
 							unAnsCount++;
@@ -116,13 +118,15 @@ $(document).ready(function(){
 							numberOfQuestions++;
 						}
 			    }
-			    //********************************************
 			
 				
-		    		//This Main Function handles the majority of the logic - from setting up the initial display during a question, to having several other functions within it to handle score keeping and rotation between the questions.
+		    		//This Main Function handles the the main logic - from setting up the initial display during a question, to having several other functions within it to handle score keeping and rotation between the questions.
 					function firstFunction(){
+
+						//Run timer
 						run();
-						//When the total number of questions asked reaches 10, end the game and give the option to restart.
+
+						//When the total number of questions asked reaches 10, end the game, display stats, and give the option to restart.
 						if (numberOfQuestions === 10){
 							stop();
 							stop(firstFunction);
@@ -141,20 +145,18 @@ $(document).ready(function(){
 							});
 						}
 
-							//Set timer1 starting value
+							//Set timer1 starting value and clear appropriate divs
 							timer = 25;
 							$("#pic").html("");
 							$("#answer").html("");
 							$("#timer").html("Time remaining: " + timer);
 
 
-
-							//Display question in sequence
+							//Display questions in sequence
 							$("#question").html(questionOptions[numberOfQuestions].question);
 
 
-
-							//Possible answers(4 - from button1 to button4)
+							//Possible answers(4 - from button1 to button4 drawn from the "option" arrays
 							$("#option1").show();
 							$("#option1").html(questionOptions[numberOfQuestions].option[0]);
 
@@ -167,6 +169,8 @@ $(document).ready(function(){
 							$("#option4").show();
 							$("#option4").html(questionOptions[numberOfQuestions].option[3]);
 
+
+							//function for correct or incorrect answers logic later to be called in click functions
 							function myOptions(){
 								if ((questionOptions[numberOfQuestions].option[optionNum] === questionOptions[numberOfQuestions].correctAns) && (numberOfQuestions <= 9)){
 									stop();
@@ -175,7 +179,7 @@ $(document).ready(function(){
 									$("#question").html("Correct!");
 									hide();
 									$("#pic").html(questionOptions[numberOfQuestions].option[4]);
-									setTimeout(timeUp, 500);
+									setTimeout(timeUp, 7000);
 								}
 								else if ((questionOptions[numberOfQuestions].option[optionNum] !== questionOptions[numberOfQuestions].correctAns) && (numberOfQuestions <= 9)){
 									stop();
@@ -191,6 +195,7 @@ $(document).ready(function(){
 							}
 						
 
+									//buttons for possible answers (4)
 									$("#option1").off().on("click", function(){
 										optionNum = 0;
 										myOptions();
@@ -212,6 +217,7 @@ $(document).ready(function(){
 									});
 					}
 
+				//Run the main function as soon as the game starts (on.click 'start')
 				firstFunction();
 
 			});
