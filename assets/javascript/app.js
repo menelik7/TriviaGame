@@ -120,7 +120,7 @@ $(document).ready(function(){
 			    }
 			
 				
-		    		//This Main Function handles the the main logic - from setting up the initial display during a question, to having several other functions within it to handle score keeping and rotation between the questions.
+		    		//This function handles the main logic - from setting up the initial display during a question, to having several other functions within it to handle score keeping and rotation between the questions.
 					function firstFunction(){
 
 						//Run timer
