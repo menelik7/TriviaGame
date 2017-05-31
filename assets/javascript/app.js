@@ -102,10 +102,10 @@ $(document).ready(function(){
 				}
 
 				function decrement() {
-			        timer1--;
-			        $("#timer").html("Time remaining: " + timer1);
+			        timer--;
+			        $("#timer").html("Time remaining: " + timer);
 
-				        if (timer1 === 0){
+				        if (timer === 0){
 							stop();
 							unAnsCount++;
 							$("#question").html("Sorry, but you ran out of time...");
@@ -127,9 +127,8 @@ $(document).ready(function(){
 							stop();
 							stop(firstFunction);
 							$("#answer").html("");
-							$("#question").html("");
 							$("#question").html("All done - here's how you did out of " + numberOfQuestions + " questions:");
-							$("#question").append("<br> Correct Answers: " + correctAnsCount +
+							$("#stats").append("<br><br>Correct Answers: " + correctAnsCount +
 											   "<br> Incorrect Answers: " + incorrectAnsCount +
 											   "<br> Unanswered: " + unAnsCount);
 							hide();
@@ -138,14 +137,15 @@ $(document).ready(function(){
 							$("#start").html("Start Over?");
 							return $("#start").on("click", function(){
 							$("#start").hide();
+							$("#stats").html("");
 							});
 						}
 
 							//Set timer1 starting value
-							timer1 = 25;
+							timer = 25;
 							$("#pic").html("");
 							$("#answer").html("");
-							$("#timer").html("Time remaining: " + timer1);
+							$("#timer").html("Time remaining: " + timer);
 
 
 
@@ -168,16 +168,16 @@ $(document).ready(function(){
 							$("#option4").html(questionOptions[numberOfQuestions].option[3]);
 
 							function myOptions(){
-								if (questionOptions[numberOfQuestions].option[optionNum] === questionOptions[numberOfQuestions].correctAns){
+								if ((questionOptions[numberOfQuestions].option[optionNum] === questionOptions[numberOfQuestions].correctAns) && (numberOfQuestions <= 9)){
 									stop();
 									correctAnsCount++;
 									console.log("Correct answer count: " + correctAnsCount);
 									$("#question").html("Correct!");
 									hide();
 									$("#pic").html(questionOptions[numberOfQuestions].option[4]);
-									setTimeout(timeUp, 7000);
+									setTimeout(timeUp, 500);
 								}
-								else if (questionOptions[numberOfQuestions].option[optionNum] !== questionOptions[numberOfQuestions].correctAns){
+								else if ((questionOptions[numberOfQuestions].option[optionNum] !== questionOptions[numberOfQuestions].correctAns) && (numberOfQuestions <= 9)){
 									stop();
 									$("#question").html("Negatory!");
 									incorrectAnsCount++;
@@ -193,30 +193,22 @@ $(document).ready(function(){
 
 									$("#option1").off().on("click", function(){
 										optionNum = 0;
-										if (numberOfQuestions <= 9){
-											myOptions();
-										}
+										myOptions();
 									});
 
 									$("#option2").off().on("click", function(){
 										optionNum = 1;
-										if (numberOfQuestions <= 9){
-											myOptions();
-										}
+										myOptions();
 									});
 
 									$("#option3").off().on("click", function(){	
 										optionNum = 2;
-										if (numberOfQuestions <= 9){
 											myOptions();
-										}
 									});
 									
 									$("#option4").off().on("click", function(){
 										optionNum = 3;
-										if (numberOfQuestions <= 9){
-											myOptions();
-										}
+										myOptions();
 									});
 					}
 
