@@ -1,30 +1,37 @@
 body {
-	background: url("../images/circles-and-roundabouts.png");
+	background: url("../images/whitey.png");
+	scroll-behavior: auto;
 }
 
-header {
-	text-align: center;
-	margin-bottom: 40px;
-	color: #8e2800;
+.jumbotron {
+	background-color: #644d52;
+	height: 150px;
 }
 
-h1 {
-	font-size: 50px;
+.jumbotron h1 {
+	margin: auto;
+	color:white;
 }
 
 /*Main Content*/
 .container {
-	background: url("../images/crossword.png");
-	padding: 20px;
-}
-
-.col-md-12 {
+	border-radius: 40px;
+	color: #644d52;
 	text-align: center;
 	font-size: 30px;
 }
 
+#main-div {
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	border: 2px solid #a49a87;
+	background: url("../images/playstation-pattern.png");
+}
+
 #question {
-	padding-top: 50px;
+	padding-top: 20px;
+	padding-bottom: : 20px;
 }
 
 #stats {
@@ -36,10 +43,11 @@ h1 {
 	background: none;
 	border: none;
 	font-size: 30px;
+	color: #644d52;
 }
 img {
-	height: 420px;
-	width: 760px;
+	height: 350px;
+	width: 700px;
 	padding: 20px;
 }
 
@@ -52,11 +60,45 @@ img {
 }
 
 #firstRow {
-	margin-top: 50px;
+	margin-top: 30px;
 }
 
 #start {
+	color: #644d52;
 	margin-top: 100px;
 	width: 300px;
-	border: 2px solid #1f8a70;
+	background: url("../images/whitey.png");
+	border: 2px solid #a49a87;
 }
+
+#connect {
+    width: 100%;
+    margin: auto;
+    height: 50px;
+}
+
+.social {
+    margin: 20px 0 0 10px;
+    width: 90px;
+    height: 90px;
+}
+
+.github {
+    margin: 22px 0 0 5px;
+    width: 110px;
+    height: 90px;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	margin-top: 10px;
+	width: 100%;	
+	padding: 25px 0;
+	font-size: 12px;
+	color: #F1EBE3;
+	text-align: center;
+	border-top: 4px solid #f77a52;
+	background: #332532;
+}
+

@@ -111,7 +111,7 @@ $(document).ready(function(){
 							stop();
 							unAnsCount++;
 							$("#question").html("Sorry, but you ran out of time...");
-							$("#answer").html('The correct answer was: "' + questionOptions[numberOfQuestions].correctAns + '"');
+							$("#stats").html('The correct answer was: "' + questionOptions[numberOfQuestions].correctAns + '"');
 							hide();
 							$("#pic").html(questionOptions[numberOfQuestions].option[4]);
 							setTimeout(timeUp, 7000);
@@ -147,8 +147,9 @@ $(document).ready(function(){
 
 							//Set timer1 starting value and clear appropriate divs
 							timer = 25;
-							$("#pic").html("");
+							$("#stats").html("");
 							$("#answer").html("");
+							$("#pic").html("");
 							$("#timer").html("Time remaining: " + timer);
 
 
@@ -179,18 +180,19 @@ $(document).ready(function(){
 									$("#question").html("Correct!");
 									hide();
 									$("#pic").html(questionOptions[numberOfQuestions].option[4]);
-									setTimeout(timeUp, 7000);
+									
 								}
-								else if ((questionOptions[numberOfQuestions].option[optionNum] !== questionOptions[numberOfQuestions].correctAns) && (numberOfQuestions <= 9)){
+								else{
 									stop();
-									$("#question").html("Negatory!");
+									$("#question").html("Nope!");
 									incorrectAnsCount++;
 									console.log("Incorrect answer count: " + incorrectAnsCount);
-									$("#answer").html("The correct answer was: " + questionOptions[numberOfQuestions].correctAns);
+									$("#stats").html("The correct answer was: " + questionOptions[numberOfQuestions].correctAns);
 									hide();
 									$("#pic").html(questionOptions[numberOfQuestions].option[4]);
-									setTimeout(timeUp, 7000);
+									
 								}
+									setTimeout(timeUp, 7000);
 									numberOfQuestions++;
 							}
 						
