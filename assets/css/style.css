@@ -4,28 +4,31 @@ body {
 }
 
 .jumbotron {
-	background-color: #644d52;
+	background-color: #ff3b77;
 	height: 150px;
 }
 
 .jumbotron h1 {
 	margin: auto;
 	color:white;
+	font-family: 'Abril Fatface', cursive;
 }
 
 /*Main Content*/
 .container {
+	position: relative;
 	border-radius: 40px;
 	color: #644d52;
 	text-align: center;
 	font-size: 30px;
+	font-family: 'Abril Fatface', cursive;
 }
 
 #main-div {
 	padding: 20px;
 	background: #fff;
 	border-radius: 5px;
-	border: 2px solid #a49a87;
+	border: 1px solid #ff3b77;
 	background: url("../images/playstation-pattern.png");
 }
 
@@ -48,7 +51,7 @@ body {
 img {
 	height: 350px;
 	width: 700px;
-	padding: 20px;
+	padding: 0;
 }
 
 #timer {
@@ -64,41 +67,57 @@ img {
 }
 
 #start {
-	color: #644d52;
+	width: 200px;
 	margin-top: 100px;
-	width: 300px;
-	background: url("../images/whitey.png");
-	border: 2px solid #a49a87;
-}
-
-#connect {
-    width: 100%;
-    margin: auto;
-    height: 50px;
-}
-
-.social {
-    margin: 20px 0 0 10px;
-    width: 90px;
-    height: 90px;
-}
-
-.github {
-    margin: 22px 0 0 5px;
-    width: 110px;
-    height: 90px;
+	border: 2px solid #9B9A9C;
+	background: #fff;
+	font-family: 'Abril Fatface', cursive;
+	font-weight: bold;
+	color: #ff3b77;
 }
 
 footer {
 	position: fixed;
 	bottom: 0;
+	width: 100%;
 	margin-top: 10px;
-	width: 100%;	
 	padding: 25px 0;
 	font-size: 12px;
+	font-family: 'Abril Fatface', cursive;
 	color: #F1EBE3;
 	text-align: center;
-	border-top: 4px solid #f77a52;
-	background: #332532;
+	border-top: 4px solid #ff3b77;
+	background: #52656b;
 }
 
+@media screen and (max-width: 768px) {
+
+body {
+	background: url("../images/whitey.png");
+	scroll-behavior: auto;
+}
+
+
+img {
+	height: 175px;
+	width: 350px;
+	padding: 0;
+}
+
+}
+
+@media screen and (max-width: 640px) {
+
+body {
+	background: url("../images/whitey.png");
+	scroll-behavior: auto;
+}
+
+
+img {
+	height: 175px;
+	width: 350px;
+	padding: 0;
+}
+
+}
