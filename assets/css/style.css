@@ -5,7 +5,7 @@ body {
 
 .jumbotron {
 	background-color: #ff3b77;
-	height: 100px;
+	height: 150px;
 }
 
 .jumbotron h1 {
@@ -98,10 +98,14 @@ body {
 	scroll-behavior: auto;
 }
 
+.jumbotron {
+	background-color: #ff3b77;
+	height: 100px;
+}
 
 img {
 	height: 175px;
-	width: 350px;
+	width: 340px;
 	padding: 0;
 }
 
@@ -114,10 +118,14 @@ body {
 	scroll-behavior: auto;
 }
 
+.jumbotron {
+	background-color: #ff3b77;
+	height: 100px;
+}
 
 img {
 	height: 175px;
-	width: 350px;
+	width: 340px;
 	padding: 0;
 }
 

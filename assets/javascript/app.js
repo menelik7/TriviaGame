@@ -76,6 +76,13 @@ $(document).ready(function(){
 				$("#option4").hide();
 			}
 
+			function show(){
+				$("#option1").show();
+				$("#option2").show();
+				$("#option3").show();
+				$("#option4").show();
+			}
+
 
 			//Start button to kick-off the game.
 			$("#start").on("click", function(){
@@ -156,18 +163,11 @@ $(document).ready(function(){
 							//Display questions in sequence
 							$("#question").html(questionOptions[numberOfQuestions].question);
 
-
 							//Possible answers(4 - from button1 to button4 drawn from the "option" arrays
-							$("#option1").show();
+							show();
 							$("#option1").html(questionOptions[numberOfQuestions].option[0]);
-
-							$("#option2").show();
 							$("#option2").html(questionOptions[numberOfQuestions].option[1]);
-
-							$("#option3").show();
 							$("#option3").html(questionOptions[numberOfQuestions].option[2]);
-
-							$("#option4").show();
 							$("#option4").html(questionOptions[numberOfQuestions].option[3]);
 
 
