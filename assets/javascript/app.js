@@ -111,7 +111,7 @@ $(document).ready(function(){
 							stop();
 							unAnsCount++;
 							$("#question").html("Sorry, but you ran out of time...");
-							$("#stats").html('The correct answer was: "' + questionOptions[numberOfQuestions].correctAns + '"');
+							$("#answer").html('The correct answer was: "' + questionOptions[numberOfQuestions].correctAns + '"');
 							hide();
 							$("#pic").html(questionOptions[numberOfQuestions].option[4]);
 							setTimeout(timeUp, 7000);
@@ -187,7 +187,7 @@ $(document).ready(function(){
 									$("#question").html("Nope!");
 									incorrectAnsCount++;
 									console.log("Incorrect answer count: " + incorrectAnsCount);
-									$("#stats").html("The correct answer was: " + questionOptions[numberOfQuestions].correctAns);
+									$("#answer").html("The correct answer was: " + questionOptions[numberOfQuestions].correctAns);
 									hide();
 									$("#pic").html(questionOptions[numberOfQuestions].option[4]);
 									
