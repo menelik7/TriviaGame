@@ -39,7 +39,7 @@ body {
 }
 
 #answer {
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #stats {
@@ -62,6 +62,7 @@ img {
 
 #timer {
 	color: #ff0000;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #first {
