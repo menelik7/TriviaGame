@@ -83,7 +83,6 @@ $(document).ready(function(){
 				$("#option4").show();
 			}
 
-
 			//Start button to kick-off the game.
 			$("#start").on("click", function(){
 
