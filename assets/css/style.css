@@ -11,6 +11,7 @@ body {
 .jumbotron h1 {
 	margin: auto;
 	color:white;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 /*Main Content*/
@@ -69,6 +70,13 @@ img {
 
 #firstRow {
 	margin-top: 30px;
+}
+
+#option1,
+#option2,
+#option3,
+#option4 {
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 #start {
