@@ -54,6 +54,7 @@ body {
 	font-size: 30px;
 	color: #644d52;
 }
+
 img {
 	height: 350px;
 	width: 700px;
@@ -70,7 +71,7 @@ img {
 }
 
 #firstRow {
-	margin-top: 30px;
+	padding-top: 30px;
 }
 
 #option1,
