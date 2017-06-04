@@ -209,7 +209,7 @@ $(document).ready(function(){
 
 									$("#option3").off().on("click", function(){	
 										optionNum = 2;
-											myOptions();
+										myOptions();
 									});
 									
 									$("#option4").off().on("click", function(){
