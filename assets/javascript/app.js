@@ -116,7 +116,7 @@ $(document).ready(function(){
 				        if (timer === 0){
 							stop();
 							unAnsCount++;
-							$("#question").html("Sorry, but you ran out of time...");
+							$("#question").html("Sorry - you ran out of time");
 							$("#answer").html('The correct answer was: "' + questionOptions[numberOfQuestions].correctAns + '"');
 							hide();
 							$("#pic").html(questionOptions[numberOfQuestions].option[4]);
